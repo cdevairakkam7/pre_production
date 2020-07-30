@@ -1,0 +1,401 @@
+
+/* The color of the body */
+body 
+{
+
+background-color: hsl(220, 49%, 49%);
+background-image: linear-gradient(315deg, #c72a54 0%, #087ee1 74%);
+
+
+
+
+}
+
+
+
+/* Contact adress */
+
+.contact_adress
+{
+position: absolute;
+width: 208px;
+height: 31px;
+left: 58px;
+top: 74px;
+
+font-family: Rhodium Libre;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 31px;
+/* identical to box height */
+
+text-transform: capitalize;
+font-feature-settings: 'dnom' on, 'numr' on;
+
+color: #000000;
+}
+
+
+
+/* Shorten URL display */
+
+.main_head_display 
+{
+top: 67px;
+position: fixed;
+left: 751px;
+width: 251px;
+height: 62px;
+
+
+font-family: Rhodium Libre;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 62px;
+/* identical to box height */
+
+
+color: #000000;
+
+}
+
+/* Paste long URL text box */
+.text_box
+{
+position: absolute;
+width: 674px;
+height: 65px;
+left: 528px;
+top: 185px;
+border: 3px solid #000000;
+border-radius: 9px;
+
+
+
+}
+
+/* Paste Branded keyword text box */
+.text_box_2
+{
+position: absolute;
+width: 337;
+height: 65px;
+left: 865px;
+top: 307px;
+border: 3px solid #000000;
+border-radius: 9px;
+}
+
+/*  Branded link button */
+.branded_link
+{
+position: absolute;
+width: 337;
+height: 65px;
+left: 528px;
+top: 307px;
+border: 3px solid #000000;
+border-radius: 9px;
+
+}
+
+
+/* Input place holder for textbox */
+::-webkit-input-placeholder {
+text-align: center;
+font-size: medium;
+color: #000000;
+font-weight: bold;
+font-family: 'Rhodium Libre', serif;
+
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+
+::selection 
+{ 
+background-color: rgba(19, 3, 110, 0.47);
+}
+
+
+
+
+
+
+
+/*  button  is for generating the link */      
+
+
+.button {
+padding: 10px 15px;
+font-size: 16px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: rgb(167, 91, 152);
+border: none;
+border-radius: 10px;
+box-shadow: 0 5px rgb(1, 1, 14);
+position: relative;
+top: 356px;
+left: 783px;
+font-family: Rhodium Libre;
+
+}
+
+.button:hover {background-color: #17bf71}
+
+.button:active {
+background-color: rgb(41, 164, 151);
+box-shadow: 0 9px rgb(10, 0, 0);
+transform: translateY(4px);
+}
+
+
+/*  button c is for copy */
+.button_c {
+padding: 10px 15px;
+font-size: 16px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: rgb(0, 0, 0);
+border: none;
+border-radius: 10px;
+box-shadow: 0 5px rgb(187, 1, 103);
+position: relative;
+top: 356px;
+left: 798px;
+font-family: Rhodium Libre;
+
+}
+.button_c:hover {background-color: #3122b6}
+
+.button_c:active {
+background-color: rgb(0, 30, 199);
+box-shadow: 0 9px rgb(10, 0, 0);
+transform: translateY(4px);
+}
+
+
+/*  button_brand  is for generating the brand */      
+
+
+.button_brand {
+padding: 10px 15px;
+font-size: 16px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: rgb(0, 2, 9);
+border: none;
+border-radius: 10px;
+box-shadow: 0 5px rgb(1, 1, 14);
+position: absolute;
+
+font-family: Rhodium Libre;
+width: 328px;
+height: 58px;
+top: 307px;
+left: 533px;
+display: none;
+}
+
+.button_brand:hover {background-color: #3d5dde}
+
+.button_brand:active {
+background-color:    #3d5dde;
+box-shadow: 0 9px rgb(10, 0, 0);
+transform: translateY(4px);
+}
+
+
+
+
+/*  Pop up Modal */    
+.bg-modal {
+background-color: rgba(0, 0, 0, 0.8);
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+display: none;
+}
+
+.modal-contents {
+height: 300px;
+width: 500px;
+background-color: white;
+text-align: center;
+padding: 20px;
+position: relative;
+border-radius: 4px;
+}
+
+/* close button X */
+.close {
+position: absolute;
+top: 0;
+right: 10px;
+font-size: 42px;
+color: #333;
+transform: rotate(45deg);
+cursor: pointer;
+&:hover {
+color: #666;
+}
+}
+
+/* button inside modal */
+.button_inside_modal {
+padding: 10px 15px;
+font-size: 16px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: rgb(167, 91, 152);
+border: none;
+border-radius: 10px;
+box-shadow: 0 5px rgb(1, 1, 14);
+position: relative;
+
+font-family: Rhodium Libre;
+left: 23px;
+top: 42px;
+
+}
+
+.button_inside_modal:hover {background-color: #17bf71}
+
+.button_inside_modal:active {
+background-color: rgb(41, 164, 151);
+box-shadow: 0 9px rgb(10, 0, 0);
+transform: translateY(4px);
+}
+
+
+.button_inside_modal_1 {
+padding: 10px 15px;
+font-size: 16px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: hsla(167, 78%, 19%, 1);
+border: none;
+border-radius: 10px;
+box-shadow: 0 5px rgb(1, 1, 14);
+position: relative;
+
+font-family: Rhodium Libre;
+left: 23px;
+top: 42px;
+
+}
+
+.button_inside_modal_1:hover {background-color: #000000}
+
+.button_inside_modal_1:active {
+    background-color: rgb(222, 24, 100);
+box-shadow: 0 9px rgb(10, 0, 0);
+transform: translateY(4px);
+}
+
+
+.button_inside_modal_2 {
+padding: 10px 15px;
+font-size: 16px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: hsla(230,84%,63%,1);
+border: none;
+border-radius: 10px;
+box-shadow: 0 5px rgb(1, 1, 14);
+position: relative;
+
+font-family: Rhodium Libre;
+left: 23px;
+top: 58px;
+
+}
+
+.button_inside_modal_2:hover {background-color: #000000}
+
+.button_inside_modal_2:active {
+    background-color: rgb(222, 24, 100);
+box-shadow: 0 9px rgb(10, 0, 0);
+transform: translateY(4px);
+}
+
+.button_inside_modal_3 {
+padding: 10px 15px;
+font-size: 16px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: hsl(177, 62%, 44%);
+border: none;
+border-radius: 10px;
+box-shadow: 0 5px rgb(1, 1, 14);
+position: relative;
+
+font-family: Rhodium Libre;
+left: 23px;
+top: 74px;
+
+}
+
+.button_inside_modal_3:hover {background-color: #000000}
+
+.button_inside_modal_3:active {
+    background-color: rgb(222, 24, 100);
+box-shadow: 0 9px rgb(10, 0, 0);
+transform: translateY(4px);
+}
+
+.button_inside_modal_4 {
+padding: 10px 15px;
+font-size: 16px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: rgb(167, 95, 91);
+border: none;
+border-radius: 10px;
+box-shadow: 0 5px rgb(1, 1, 14);
+position: relative;
+
+font-family: Rhodium Libre;
+left: 23px;
+top: 91px;
+
+}
+
+.button_inside_modal_4:hover {background-color: #000000}
+
+.button_inside_modal_4:active {
+background-color: rgb(222, 24, 100);
+box-shadow: 0 9px rgb(10, 0, 0);
+transform: translateY(4px);
+}
+
+
+
+.modal_title{
+    margin-top: -191px;
+
+font-family: Rhodium Libre;
+}
