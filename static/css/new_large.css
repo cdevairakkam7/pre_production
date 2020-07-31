@@ -399,3 +399,30 @@ transform: translateY(4px);
 
 font-family: Rhodium Libre;
 }
+
+/* rhodium-libre-regular - latin */
+@font-face {
+    font-family: 'Rhodium Libre';
+    font-style: normal;
+    font-weight: 400;
+    src: url('rhodium-libre-v5-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Rhodium Libre'), local('RhodiumLibre-Regular'),
+         url('rhodium-libre-v5-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('rhodium-libre-v5-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('rhodium-libre-v5-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('rhodium-libre-v5-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('rhodium-libre-v5-latin-regular.svg#RhodiumLibre') format('svg'); /* Legacy iOS */
+  }
+
+
+
+
+  .product_hunt {
+
+
+    width: 202px;
+    height: 49px;
+    position: absolute;
+    top: 178px;
+    left: 56px;
+  }

@@ -2,14 +2,15 @@
 
 <head>
 
-    <link href="https://fonts.googleapis.com/css?family=Rhodium+Libre&display=swap" rel="stylesheet">
+   
     <script>
   !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var t=analytics.methods[e];analytics[t]=analytics.factory(t)}analytics.load=function(e,t){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+e+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=t};analytics.SNIPPET_VERSION="4.1.0";
   analytics.load("cscEQu0RadeeG4wUIBQRmwY2lXVog6A5");
   analytics.page();
   }}();
 </script>
-    <link rel="stylesheet" href="static/css/new_large.css">
+    <link rel="stylesheet" href="static/css/new_large.css"> 
+    
  
 
 </head>
@@ -24,12 +25,14 @@
     <p class="main_head_display">
         Shorten URLs
     </p>
-     <a href="https://www.producthunt.com/posts/short-custom-link-creator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-short-custom-link-creator" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=222007&theme=dark" alt="Short custom link creator -  https://omelet.xyz allows you to create custom short URLs | Product Hunt Embed" style="width: 250px; height: 54px;" width="250px" height="54px"     top="151px"  position="fixed"/></a>
+     <a class="product_hunt" href="https://www.producthunt.com/posts/short-custom-link-creator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-short-custom-link-creator" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=222007&theme=dark" alt="Short custom link creator -  https://omelet.xyz allows you to create custom short URLs | Product Hunt Embed" style="width: 250px; height: 54px;" width="250px" height="54px"     top="151px"  position="fixed"/></a>
 
     <!--Long url and branded Input-->
     <input type="url" id="lname" autocomplete="off" placeholder="Paste Long Url Here" pattern="https.*" class="text_box" required="required" oninput="brand_namespace_atuo_fill();" style="font-size: 18; font-family: Rhodium Libre; text-align:center;"><br><br>
-    <input type="text" id="usr_input" autocomplete="off" placeholder="Branded Keyword" pattern="[A-Z]" class="text_box_2" required="required"  style="font-size: 18; font-family: Rhodium Libre; text-align:center;"><br><br>
-    <input type="button"  id="branded_link"  class="button_brand" onclick="display_on();" > </button><br><br>
+    <input type="text" id="usr_input" autocomplete="off" placeholder="Branded Keyword" pattern="[A-Z]" class="text_box_2" required="required"  style="font-size: 18; font-family: Rhodium Libre; text-align:center;" onfocus="validity_function();" onblur=" invalid_function();"><br><br>
+    <input type="button"  id="branded_link"  class="button_brand" onclick="display_on();"  > </button>
+    <text  class="validity"  style=" display: none; top: 374px;    position: absolute;    left: 924px;    font-family: Rhodium Libre;    font-size: small;color: bisque;">Valid for 7 days, sign up to extend.</text>
+    <br><br>
 
 
     <!--Generate short url and copy button -->
@@ -80,6 +83,9 @@
 
       <!--Javascript for closing Modal-->
       <script type="text/javascript" src="static/js/modal.js"></script>
+
+    <!--Javascript for closing Modal-->
+    <script type="text/javascript" src="static/js/validity_function.js"></script>
 
 
    
