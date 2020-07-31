@@ -7,6 +7,7 @@
 # Seq
 def execute_the_input(long_url,brand_url):
     long_url=long_url.strip()
+    
    
     
     # Retrieving Millisecond From Current Time
@@ -16,6 +17,7 @@ def execute_the_input(long_url,brand_url):
     str_millis=(str_millis[-6:])
     str_millis=hex(int(str_millis))
     millis=str_millis[2:]
+    epoch_elapsed=time.time()
 
     # Lookup Key based on Day of year
     from python_files import key_year_lookup
@@ -50,7 +52,7 @@ def execute_the_input(long_url,brand_url):
 
     mini_link= brand_url+"/"+short_url_key
 
-    mydict = { "long_url": long_url, "_key": short_url_key,"mini_link":mini_link,"seq":seq ,"brand_domain":brand_url}
+    mydict = { "long_url": long_url, "_key": short_url_key,"mini_link":mini_link,"seq":seq ,"brand_domain":brand_url,"epoch_elapsed":epoch_elapsed,"validity":7,"loged_in":0}
 
     kollection.insert_one(mydict)
 
@@ -62,6 +64,8 @@ def inject_custom_mongo(long_url,usr_input,brand_domain):
     from pymongo import MongoClient
     from flask import render_template
     from bson.objectid import ObjectId
+    import time
+    epoch_elapsed=time.time()
 
     cluster = MongoClient("mongodb://cdevairakkam:Amplitude20DEC!@minilinkcluster-shard-00-00-ja0tk.azure.mongodb.net:27017,minilinkcluster-shard-00-01-ja0tk.azure.mongodb.net:27017,minilinkcluster-shard-00-02-ja0tk.azure.mongodb.net:27017/test?ssl=true&replicaSet=minilinkcluster-shard-0&authSource=admin&retryWrites=true&w=majority")
     db = cluster["links"]
@@ -86,7 +90,7 @@ def inject_custom_mongo(long_url,usr_input,brand_domain):
         newvalues = { "$set": { "seq": seq+1 } }
         collection.update_one(myquery, newvalues)
         mini_link=brand_domain+"/"+usr_input
-        mydict = { "long_url": long_url, "_key": usr_input,"mini_link":mini_link,"seq":seq,"brand_domain":brand_domain }
+        mydict = { "long_url": long_url, "_key": usr_input,"mini_link":mini_link,"seq":seq,"brand_domain":brand_domain,"epoch_elapsed":epoch_elapsed,"validity":7,"loged_in":0 }
         kollection.insert_one(mydict)
         return mini_link
     else:
