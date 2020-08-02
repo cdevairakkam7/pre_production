@@ -1,5 +1,14 @@
 from flask import Flask
 # Import necessary modules
+from flask import Flask,render_template,request,make_response,jsonify,redirect
+from flask_cloudflare_remote import CloudflareRemote
+
+
+app = Flask(__name__)
+@app.route("/")
+def hello():
+    from flask import Flask
+# Import necessary modules
 from flask import Flask,render_template,request,make_response,jsonify,redirect,request
 
 
@@ -19,7 +28,6 @@ def hello():
     # collection = counters
     collection = db["link_performance"]
     ip_address=request.remote_addr
-    ip_address.split(':')
     ip_address=ip_address.split(':')[0]
 
     import requests
@@ -46,12 +54,7 @@ def hello():
     "city": ip_adress_based_response['city'],
     "zip": ip_adress_based_response['zip'],
     "latitude": ip_adress_based_response['latitude'],
-    "longitude": ip_adress_based_response['longitude'],
-    "short_url":short_url,
-    "long_url":original_url,
-    "time_stamp":seconds,
-    "referrer_url":referrer_url,
-    "user_agent":user_agent    
+    "longitude": ip_adress_based_response['longitude']   
     }
 
     from pymongo import MongoClient
@@ -63,7 +66,7 @@ def hello():
     # collection = counters
     collection = db["link_performance"]
     collection.insert_one(my_dict)
-
+   
     return 'Hello'
   
     
@@ -72,3 +75,14 @@ def hello():
 
 if __name__ == "__main__":
     app.run(debug=True,host='127.0.0.1')
+
+
+        
+            
+
+        
+            
+            
+
+
+
