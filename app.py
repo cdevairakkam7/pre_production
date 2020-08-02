@@ -1,7 +1,7 @@
 from flask import Flask
 # Import necessary modules
 from flask import Flask,render_template,request,make_response,jsonify,redirect
-from flask_cloudflare_remote import CloudflareRemote
+
 
 
 app = Flask(__name__)
