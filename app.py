@@ -18,7 +18,10 @@ def hello():
     db = cluster["links"]
     # collection = counters
     collection = db["link_performance"]
-    my_dict={"ip":request.remote_addr}
+    ip_address=request.remote_addr
+    ip_address.split(':')
+    ip_address=ip_address.split(':')[0]
+    my_dict={"ip":ip_address}
     collection.insert_one(my_dict)
     return 'Hello'
   
