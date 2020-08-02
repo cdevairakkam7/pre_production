@@ -6,10 +6,12 @@ from flask import Flask,render_template,request,make_response,jsonify,redirect
 app = Flask(__name__)
 @app.route("/")
 def hello():
-    print("##################")
-    
-    print(request.remote_addr)
-    print("##################")   
+    import socket
+    ## getting the hostname by socket.gethostname() method
+    hostname = socket.gethostname()
+    ## getting the IP address using socket.gethostbyname() method
+    ip_address = socket.gethostbyname(hostname)
+  
     from pymongo import MongoClient
     from flask import render_template
     from bson.objectid import ObjectId
@@ -18,7 +20,7 @@ def hello():
     db = cluster["links"]
     # collection = counters
     collection = db["link_performance"]
-    my_dict={"ip":request.remote_addr}
+    my_dict={"ip":ip_address}
     collection.insert_one(my_dict)
     return 'Hello'
   
