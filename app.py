@@ -1,16 +1,14 @@
 from flask import Flask
 # Import necessary modules
-from flask import Flask,render_template,request,make_response,jsonify,redirect
+from flask import Flask,render_template,request,make_response,jsonify,redirect,request
 
 
 app = Flask(__name__)
 @app.route("/")
 def hello():
-    import socket
-    ## getting the hostname by socket.gethostname() method
-    hostname = socket.gethostname()
-    ## getting the IP address using socket.gethostbyname() method
-    ip_address = socket.gethostbyname(hostname)
+    from werkzeug.middleware.proxy_fix import ProxyFix
+    app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
+
   
     from pymongo import MongoClient
     from flask import render_template
@@ -20,7 +18,7 @@ def hello():
     db = cluster["links"]
     # collection = counters
     collection = db["link_performance"]
-    my_dict={"ip":ip_address}
+    my_dict={"ip":request.remote_addr}
     collection.insert_one(my_dict)
     return 'Hello'
   
