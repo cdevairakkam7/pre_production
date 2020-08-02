@@ -1,11 +1,13 @@
-def inject(ip_address,user_agent,short_url,original_url):
+def inject(ip_address,user_agent,short_url,original_url,referrer_url):
     import requests
+    import json
     url = "http://api.ipstack.com/"+ip_address+"?access_key=55a1adfd4020c63a6080af8759e88e3b"
     payload = {'': ''}
     files = []
     headers = {}
     response = requests.request("GET", url, headers=headers, data = payload, files = files)
-    ip_adress_based_response=response.text.encode('utf8')
+    ip_adress_based_response=json.loads(response.text.encode('utf8'))
+    print(ip_adress_based_response)
     import time
     seconds = time.time()
 
@@ -22,13 +24,11 @@ def inject(ip_address,user_agent,short_url,original_url):
     "zip": ip_adress_based_response['zip'],
     "latitude": ip_adress_based_response['latitude'],
     "longitude": ip_adress_based_response['longitude'],
-    "capital": ip_adress_based_response['capital'],
-    "calling_code": ip_adress_based_response['calling_code'],
-    "is_eu": ip_adress_based_response['is_eu'],
-    "user_agent":ip_adress_based_response['user_agent'],
     "short_url":short_url,
     "long_url":original_url,
-    time_stamp:seconds
+    "time_stamp":seconds,
+    "referrer_url":referrer_url,
+    "user_agent":user_agent    
     }
 
     from pymongo import MongoClient
@@ -40,5 +40,8 @@ def inject(ip_address,user_agent,short_url,original_url):
     # collection = counters
     collection = db["link_performance"]
     collection.insert_one(my_dict)
+    return True
 
-inject(ip_address,user_agent,short_url,original_url)
+
+
+
