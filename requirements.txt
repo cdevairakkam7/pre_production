@@ -7,3 +7,7 @@ python-dotenv
 python-jose
 flask-cors
 six
+flask_ipinfo
+flask_oidc
+
+
